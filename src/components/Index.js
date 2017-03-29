@@ -25,10 +25,7 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch){
 	return{
 		add: () => dispatch(action.add()), // 触发action.add()函数执行后返回的action对象
-		del: () => dispatch(function(dispatch){  //因为使用了redux-thunk，所以这里可以dispatch可以传函数作为参数
-			let confirm = prompt('确定要减掉么？')
-			if(confirm) dispatch(action.del())
-		})
+		del: () => dispatch(action.delThunk) //使用thunk
 	}
 }
 

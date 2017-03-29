@@ -23,7 +23,7 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch){
     return{
         add: () => dispatch(action.add2()), // 触发action.add()函数执行后返回的action对象
-        del: () => dispatch(function(dispatch){
+        del: () => dispatch(function(dispatch){ //直接写函数一样的
             let confirm = prompt('确定要减掉么？')
             if(confirm) dispatch(action.del2())
         })
